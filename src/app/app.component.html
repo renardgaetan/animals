@@ -1,0 +1,21 @@
+<div class="content" role="main">
+<br />
+<div *ngIf="SelectionEnCours == false">
+   <p>AUCUNE SELECTION : VEUILLEZ CLIQUER SUR UNE IMAGE</p>
+</div>
+
+<div *ngIf="SelectionEnCours == true">
+
+   <p>CARACTERISTIQUES de l'animal selectionné: </p>
+   <p>Nom : {{ ItemSelectionner.nom }}</p>
+   <p>Taille : {{ ItemSelectionner.taille }}</p>
+   <p>Poids : {{ ItemSelectionner.poids }}</p>
+</div>
+
+<div *ngFor="let item of ItemArray">
+  <span (click)="selection(item)">
+      <p><img src="{{ item.img }}" width="250" height="200" /> </p>
+  </span>
+</div>
+
+</div>
